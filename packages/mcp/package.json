@@ -1,0 +1,59 @@
+{
+  "name": "@proof-layer/mcp",
+  "version": "1.0.0",
+  "description": "Cryptographic governance receipts for AI agent actions, exposed via Model Context Protocol. Ed25519-signed, hash-chained, independently verifiable offline. Drop-in for Claude Desktop, Cursor, Cline, and any MCP-aware host.",
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "bin": {
+    "proof-layer-mcp": "./dist/index.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup && node -e \"require('fs').renameSync('dist/index.d.ts','dist/index.d.mts')\"",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "homepage": "https://prooflayer.world999labs.com",
+  "bugs": { "url": "https://github.com/World-999-Labs/proof-layer/issues" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/World-999-Labs/proof-layer.git",
+    "directory": "packages/mcp"
+  },
+  "keywords": [
+    "proof-layer",
+    "prooflayer",
+    "world999labs",
+    "mcp",
+    "model-context-protocol",
+    "ai-governance",
+    "ai-compliance",
+    "ai-audit",
+    "ai-safety",
+    "audit-trail",
+    "cryptographic-receipts",
+    "independent-verification",
+    "ed25519",
+    "claude",
+    "claude-desktop",
+    "cursor",
+    "cline",
+    "anthropic"
+  ]
+}

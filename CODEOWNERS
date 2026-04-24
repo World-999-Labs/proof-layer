@@ -1,0 +1,11 @@
+# Default reviewer for everything in this repo.
+# GitHub will request a review from this owner on any PR.
+*                       @World-999-Labs
+
+# Per-area owners — keep these in sync with the team layout in the
+# private monorepo so reviewers don't have to context-switch.
+/packages/mcp/          @World-999-Labs
+/packages/verify/       @World-999-Labs
+/.github/workflows/     @World-999-Labs
+/SECURITY.md            @World-999-Labs
+/PRIVACY.md             @World-999-Labs

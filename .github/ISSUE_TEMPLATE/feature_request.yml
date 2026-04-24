@@ -1,0 +1,53 @@
+name: Feature request
+description: Suggest something for @proof-layer/mcp or @proof-layer/verify.
+title: "[feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. For changes to the kernel API itself
+        (new verdict types, new policy semantics, new receipt fields)
+        please open the issue here too — we'll triage and route it.
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Which surface should this land in?
+      options:
+        - "@proof-layer/mcp — new tool or change to an existing tool"
+        - "@proof-layer/mcp — startup / config / telemetry"
+        - "@proof-layer/verify — new bundle format or verification feature"
+        - "@proof-layer/verify — language port (Python, Go, Rust …)"
+        - Documentation
+        - Other (please describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Tell us about the use case, not the implementation. The more concrete, the better.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How would you like it to work? UX, API shape, example invocation.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you tried, other tools you looked at, why they didn't fit.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Are you willing to help?
+      options:
+        - label: I'd be willing to open a PR if we agree on a design.
+        - label: I can help test a beta build on my setup.

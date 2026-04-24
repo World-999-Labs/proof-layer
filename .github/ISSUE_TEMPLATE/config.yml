@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/World-999-Labs/proof-layer/security/advisories/new
+    about: Please report security issues privately, not as public issues. See SECURITY.md.
+  - name: Question or support request
+    url: mailto:support@world999labs.com
+    about: For usage questions, billing, or anything that isn't a bug or feature request.
+  - name: Live demo & docs
+    url: https://prooflayer.world999labs.com
+    about: Try the demo, read the API reference, or grab an API key.

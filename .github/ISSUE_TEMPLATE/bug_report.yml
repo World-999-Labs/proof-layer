@@ -1,0 +1,98 @@
+name: Bug report
+description: Something is broken in @proof-layer/mcp or @proof-layer/verify.
+title: "[bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. The more of these fields you fill in, the faster we can fix it.
+        For security issues, please use the private advisory flow instead — see `SECURITY.md`.
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Which package is affected?
+      options:
+        - "@proof-layer/mcp"
+        - "@proof-layer/verify"
+        - both
+        - other / unsure
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: Output of `npm ls @proof-layer/mcp` (or `@proof-layer/verify`).
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: host
+    attributes:
+      label: MCP host (only for @proof-layer/mcp bugs)
+      options:
+        - Claude Desktop
+        - Cursor
+        - Cline
+        - Continue
+        - Other (please specify in the description)
+        - N/A — verifier bug
+    validations:
+      required: false
+
+  - type: input
+    id: host_version
+    attributes:
+      label: Host version
+      placeholder: "Claude Desktop 0.7.x"
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "macOS 14.4 / Ubuntu 24.04 / Windows 11"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      description: Numbered steps from a fresh install. The shorter the repro, the faster the fix.
+      placeholder: |
+        1. `npx -y @proof-layer/mcp@latest`
+        2. Call `pl_evaluate` with …
+        3. Observe …
+    validations:
+      required: true
+
+  - type: input
+    id: receipt_id
+    attributes:
+      label: Receipt ID (optional)
+      description: If a specific evaluation went wrong, paste the receipt id — we can look it up server-side.
+      placeholder: "rcpt_..."
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: stdout / stderr from the MCP server, or the host's MCP debug log if available.
+      render: shell

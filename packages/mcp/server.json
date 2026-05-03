@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.world-999-labs/proof-layer",
+  "description": "Proof Layer MCP server — cryptographically signed provenance receipts for AI agent actions. Verify what your AI did, when, and on whose behalf.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/World-999-Labs/proof-layer",
+    "source": "github"
+  },
+  "websiteUrl": "https://prooflayer.world999labs.com",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@proof-layer/mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PROOF_LAYER_API_KEY",
+          "description": "Your Proof Layer API key from https://prooflayer.world999labs.com/dashboard/keys",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "PROOF_LAYER_API_URL",
+          "description": "Override the default API endpoint (default: https://prooflayer.world999labs.com)",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "PROOF_LAYER_TELEMETRY",
+          "description": "Set to 'off' to disable anonymous usage telemetry (default: on)",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
